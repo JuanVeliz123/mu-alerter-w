@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export,guard-for-in,no-restricted-syntax,radix,no-plusplus */
 const eventTimes = [
   [
     'CP',
@@ -52,28 +53,25 @@ const eventTimes = [
       '23:37'
     ]
   ],
-  ['Canyon Inv', ['11:50', '23:50']],
   ['PET Muun', ['03:45', '07:45', '11:45', '15:45', '19:45', '23:45']],
-  ['Undines', ['02:53', '14:53']],
   ['Double Goer', ['02:15', '08:15', '14:15', '20:15']],
-  ['MOSS Gambler', ['01:00', '09:00', '17:00']],
+  ['MOSS Gambler', ['01:00', '06:59', '09:00', '17:00']],
   ['Ice Queen', ['00:00', '06:00', '12:00', '18:00']],
   ['Balrog', ['03:12', '11:12', '19:12']],
   ['Hydra', ['12:47', '22:47']],
-  ['Gorgon (Loren)', ['06:14', '14:14']],
-  ['RedDrag (Noria)', ['03:14', '17:14']],
-  ['Skeleton (Elb)', ['10:14', '21:14']],
+  ['Gorgon', ['06:14', '14:14']],
+  ['Skeleton', ['10:14', '21:14']],
   ['Metal Balrog', ['03:17', '11:17', '19:17']],
   ['Undines', ['02:53', '14:53']],
-  ['Debenter Inv', ['07:53', '19:53']],
-  ['Uruk/Nars Inv', ['04:53', '16:53']],
-  ['Ferea Inv', ['02:50', '14:50']],
-  ['NixLake Inv', ['04:50', '16:50']],
-  ['DeepDung Inv', ['06:50', '18:50']],
-  ['DarkSwamp Inv', ['08:50', '20:50']],
-  ['KuberaMine Inv', ['10:50', '22:50']],
-  ['Abyssal Inv', ['12:50', '00:50']],
-  ['Canyon Inv', ['11:50', '23:50']],
+  ['Debenter', ['07:53', '19:53']],
+  ['UrukNars', ['04:53', '16:53']],
+  ['Ferea', ['02:50', '14:50']],
+  ['NixLake', ['04:50', '16:50']],
+  ['DeepDung', ['06:47', '18:47']],
+  ['DarkSwamp', ['08:50', '20:50']],
+  ['KuberaMine', ['10:50', '22:50']],
+  ['Abyssal', ['12:50', '00:50']],
+  ['Canyon', ['11:50', '23:50']],
   [
     'Kundum (K7)',
     [
@@ -92,7 +90,7 @@ const eventTimes = [
     ]
   ],
   [
-    'Medusa (Swamp)',
+    'Medusa',
     [
       '01:23',
       '03:23',
@@ -121,7 +119,7 @@ function toSeconds(h: number, m: number, s: number) {
 }
 
 interface ParsedTimes {
-  name: string;
+  name: string | string[];
   countdown: string;
 }
 
@@ -135,10 +133,9 @@ export const getUpdateEventTimes = () => {
 
     let j;
     for (j = 0; j < line[1].length; j++) {
-      let t = line[1][j].split(':');
-      t = toSeconds(t[0], t[1], 0);
-
-      if (t > time) {
+      const t = line[1][j].split(':');
+      const parsedTime = toSeconds(parseInt(t[0]), parseInt(t[1]), 0);
+      if (parsedTime > time) {
         break;
       }
     }
@@ -146,14 +143,14 @@ export const getUpdateEventTimes = () => {
     j %= eventTimes[element][1].length;
     const t = eventTimes[element][1][j].split(':');
 
-    let diff = toSeconds(t[0], t[1], 0) - time;
+    let diff = toSeconds(parseInt(t[0]), parseInt(t[1]), 0) - time;
     if (diff < 0) {
       diff += 3600 * 24;
     }
 
-    const h = parseInt(diff / 3600);
+    const h = parseInt(String(diff / 3600));
     diff -= 3600 * h;
-    const m = parseInt(diff / 60);
+    const m = parseInt(String(diff / 60));
     const s = diff - m * 60;
 
     const countdown = `${h}:${`0${m}`.slice(-2)}:${`0${s}`.slice(-2)}`;

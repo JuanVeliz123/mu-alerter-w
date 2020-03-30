@@ -4,10 +4,32 @@
   flex-direction: column;
 }
 
-.container > .counter {
+.container > .listRow > div > .counter {
   text-align: center;
 }
 
-.container > .counter > h3 {
+.container > .lists {
+  display: flex;
+  justify-content: center;
+}
+
+.container > .lists > .listRow {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.counter > h3 {
   margin-bottom: 0;
+  font-size: 14px;
+}
+
+.counter > span {
+  font-size: 14px;
 }
