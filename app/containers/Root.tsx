@@ -1,12 +1,13 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import Routes from '../Routes';
+import 'antd/dist/antd.css';
 
 const Root = () => (
-  <BrowserRouter>
+  <MemoryRouter>
     <Routes />
-  </BrowserRouter>
+  </MemoryRouter>
 );
 
 export default hot(Root);

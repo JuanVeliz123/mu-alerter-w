@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export,guard-for-in,no-restricted-syntax,radix,no-plusplus */
+/* eslint-disable guard-for-in,no-restricted-syntax,radix,no-plusplus */
 const eventTimes = [
   [
     'CP',
@@ -55,18 +55,18 @@ const eventTimes = [
   ],
   ['PET Muun', ['03:45', '07:45', '11:45', '15:45', '19:45', '23:45']],
   ['Double Goer', ['02:15', '08:15', '14:15', '20:15']],
-  ['MOSS Gambler', ['01:00', '06:59', '09:00', '13:00', '17:00']],
-  ['Ice Queen', ['00:00', '06:00', '12:00', '18:00']],
+  ['MOSS Gambler', ['01:00', '06:59', '13:00', '17:00']],
+  ['Ice Queen', ['05:58', '11:58', '17:58', '23:58']],
   ['Balrog', ['03:12', '11:12', '19:12']],
-  ['Hydra', ['12:47', '22:47']],
-  ['Gorgon', ['06:14', '14:11']],
+  ['Hydra', ['12:45', '22:45']],
+  ['Gorgon', ['06:11', '14:11']],
   ['Skeleton', ['10:14', '21:14']],
   ['Metal Balrog', ['03:17', '11:17', '19:17']],
-  ['Undines', ['02:53', '14:53']],
+  ['Undines', ['02:50', '14:50']],
   ['Debenter', ['07:50', '19:50']],
-  ['UrukNars', ['04:53', '16:53']],
-  ['Ferea', ['02:50', '14:50']],
-  ['NixLake', ['04:50', '16:50']],
+  ['UrukNars', ['04:50', '16:50']],
+  ['Ferea', ['02:47', '14:47']],
+  ['NixLake', ['04:47', '16:47']],
   ['DeepDung', ['06:47', '18:47']],
   ['DarkSwamp', ['08:50', '20:50']],
   ['KuberaMine', ['10:50', '22:50']],

@@ -1,3 +1,7 @@
 {
-  "HOME": "/"
+  "DEFAULT": "/",
+  "HOME": "/home",
+  "SETTINGS": "/settings",
+  "PLAYER_INFO": "/player-info",
+  "UTILS": "/utils"
 }

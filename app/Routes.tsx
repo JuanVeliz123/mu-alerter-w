@@ -1,15 +1,21 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import routes from './constants/routes.json';
-import App from './containers/App';
 import HomePage from './containers/HomePage';
+import AppLayout from './containers/AppLayout';
+import Utils from './screens/utils/Utils';
 
 export default function Routes() {
   return (
-    <App>
+    <AppLayout>
       <Switch>
+        <Route exact path={routes.DEFAULT} component={HomePage} />
         <Route path={routes.HOME} component={HomePage} />
+        <Route path={routes.SETTINGS} component={HomePage} />
+        <Route path={routes.PLAYER_INFO} component={HomePage} />
+        <Route path={routes.UTILS} component={Utils} />
+        <Route render={() => <Redirect to={routes.DEFAULT} />} />
       </Switch>
-    </App>
+    </AppLayout>
   );
 }
