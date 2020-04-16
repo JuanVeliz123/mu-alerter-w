@@ -5,7 +5,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'no-self-compare': 'off',
-    'no-plusplus': 'off'
+    'no-plusplus': 'off',
+    'spaced-comment': 'off'
   },
   settings: {
     'import/resolver': {

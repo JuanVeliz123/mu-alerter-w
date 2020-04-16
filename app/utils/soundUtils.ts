@@ -3,7 +3,10 @@
 import { Howl } from 'howler';
 import path from 'path';
 
-const alarmSoundPath = path.resolve(__dirname, '../resources/sounds/ding.mp3');
+const alarmSoundPath =
+  process.env.NODE_ENV === 'production'
+    ? `${process.resourcesPath}/resources/sounds/ding.mp3`
+    : path.resolve(__dirname, '../resources/sounds/ding.mp3');
 
 export const playDingAlert = () => {
   const sound = new Howl({

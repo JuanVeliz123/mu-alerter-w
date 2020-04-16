@@ -38,7 +38,7 @@ function AppLayout({ children }: Props) {
             <SettingFilled />
             <span>Settings</span>
           </Menu.Item>
-          <Menu.Item onClick={() => navigateTo(routes.SETTINGS)}>
+          <Menu.Item onClick={() => navigateTo(routes.PLAYER_INFO)}>
             <UserOutlined />
             <span>Players</span>
           </Menu.Item>

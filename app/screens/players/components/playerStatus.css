@@ -1,0 +1,25 @@
+.card {
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 2px;
+  color: white;
+  background-color: #000c17;
+  width: 135px;
+}
+
+.cardDescription > div {
+  color: white;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.cardDescriptionItem {
+  padding-bottom: 0 !important;
+}
+
+.cardDescriptionItem > span {
+  color: white;
+  font-size: 10px;
+  padding-bottom: 0;
+}

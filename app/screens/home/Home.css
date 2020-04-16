@@ -6,9 +6,10 @@
   height: 100%;
 }
 
-.container > .lists {
+.container > .timers {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .container > .lists > .listRow {

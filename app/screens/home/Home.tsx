@@ -5,7 +5,6 @@ import { playDingAlert } from '../../utils/soundUtils';
 import TimerItem from './components/TimerItem';
 
 export default function Home() {
-  // eslint-disable-next-line spaced-comment
   //#region State Definition
   const [cpEventDate, setCpEventDate] = useState('');
   const [shouldAlertCp, setShouldAlertCp] = useState(true);
@@ -26,7 +25,6 @@ export default function Home() {
   const [abyssalInvDate, setAbyssalInvDate] = useState('');
   const [medusaInvDate, setMedusaInvDate] = useState('');
   const [gorgonInvDate, setGorgonInvDate] = useState('');
-  // eslint-disable-next-line spaced-comment
   //#endregion
 
   const updateEventTimes = () => {
@@ -61,7 +59,7 @@ export default function Home() {
     if (
       splitted[0] === '0' &&
       splitted[1] === '00' &&
-      parseInt(splitted[2], 10) === 10
+      parseInt(splitted[2], 10) === 20
     ) {
       playDingAlert();
     }
@@ -82,51 +80,25 @@ export default function Home() {
   return (
     <>
       <div className={styles.container} data-tid="container">
-        <div className={styles.lists}>
-          <div className={styles.listRow}>
-            <TimerItem headerName="CP EVENT" eventDate={cpEventDate} />
-            <TimerItem headerName="Moss Gambler" eventDate={mossDate} />
-            <TimerItem headerName="Balrog" eventDate={balrogDate} />
-            <TimerItem headerName="Metal Balrog" eventDate={metalBalrogDate} />
-            <TimerItem headerName="Ice Queen" eventDate={iceQueenDate} />
-            <TimerItem headerName="Hydra" eventDate={hydraDate} />
-            <TimerItem headerName="Ferea Invasion" eventDate={fereaInvDate} />
-            <TimerItem
-              headerName="Kubera Invasion"
-              eventDate={kuberaMineInvDate}
-            />
-            <TimerItem headerName="Gorgon Invasion" eventDate={gorgonInvDate} />
-          </div>
-
-          <div className={styles.listRow}>
-            <TimerItem headerName="Canyon Invasion" eventDate={canyonInvDate} />
-            <TimerItem
-              headerName="Undines Invasion"
-              eventDate={undinesInvDate}
-            />
-            <TimerItem
-              headerName="Debenter Invasion"
-              eventDate={debenterInvDate}
-            />
-            <TimerItem
-              headerName="Uruk/Nars Invasion"
-              eventDate={urukNarsInvDate}
-            />
-            <TimerItem headerName="Nix Invasion" eventDate={nixInvDate} />
-            <TimerItem
-              headerName="Deep Dungeon Inv"
-              eventDate={deepDungInvDate}
-            />
-            <TimerItem
-              headerName="Dark Swamp Inv"
-              eventDate={darkSwampInvDate}
-            />
-            <TimerItem
-              headerName="Abyssal Invasion"
-              eventDate={abyssalInvDate}
-            />
-            <TimerItem headerName="Medusa Invasion" eventDate={medusaInvDate} />
-          </div>
+        <div className={styles.timers}>
+          <TimerItem headerName="CP" eventDate={cpEventDate} />
+          <TimerItem headerName="Moss" eventDate={mossDate} />
+          <TimerItem headerName="Balrog" eventDate={balrogDate} />
+          <TimerItem headerName="Metal Balrog" eventDate={metalBalrogDate} />
+          <TimerItem headerName="Ice Queen" eventDate={iceQueenDate} />
+          <TimerItem headerName="Hydra" eventDate={hydraDate} />
+          <TimerItem headerName="Ferea" eventDate={fereaInvDate} />
+          <TimerItem headerName="Kubera" eventDate={kuberaMineInvDate} />
+          <TimerItem headerName="Gorgon" eventDate={gorgonInvDate} />
+          <TimerItem headerName="Canyon" eventDate={canyonInvDate} />
+          <TimerItem headerName="Undines" eventDate={undinesInvDate} />
+          <TimerItem headerName="Debenter" eventDate={debenterInvDate} />
+          <TimerItem headerName="Uruk/Nars" eventDate={urukNarsInvDate} />
+          <TimerItem headerName="Nix" eventDate={nixInvDate} />
+          <TimerItem headerName="Deep Dungeon" eventDate={deepDungInvDate} />
+          <TimerItem headerName="Dark Swamp" eventDate={darkSwampInvDate} />
+          <TimerItem headerName="Abyssal" eventDate={abyssalInvDate} />
+          <TimerItem headerName="Medusa" eventDate={medusaInvDate} />
         </div>
       </div>
     </>

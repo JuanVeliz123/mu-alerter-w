@@ -4,6 +4,7 @@ import routes from './constants/routes.json';
 import HomePage from './containers/HomePage';
 import AppLayout from './containers/AppLayout';
 import Utils from './screens/utils/Utils';
+import Players from './screens/players/Players';
 
 export default function Routes() {
   return (
@@ -12,7 +13,7 @@ export default function Routes() {
         <Route exact path={routes.DEFAULT} component={HomePage} />
         <Route path={routes.HOME} component={HomePage} />
         <Route path={routes.SETTINGS} component={HomePage} />
-        <Route path={routes.PLAYER_INFO} component={HomePage} />
+        <Route path={routes.PLAYER_INFO} component={Players} />
         <Route path={routes.UTILS} component={Utils} />
         <Route render={() => <Redirect to={routes.DEFAULT} />} />
       </Switch>
